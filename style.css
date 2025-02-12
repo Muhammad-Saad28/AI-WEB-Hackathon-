@@ -1,7 +1,7 @@
 /* General Box Styling */
 .section-box {
     border: 1px solid #ddd;
-    padding: 5px;
+    padding: 20px;
     margin: 20px 0;
     background-color: #f2f2f2;  /* Light grey background */
     border-radius: 8px;
@@ -41,7 +41,7 @@
 }
 
 html, body {
-    height: 50%; /* Make sure the body takes up the full height */
+    height: 100%; /* Make sure the body takes up the full height */
     margin: 0;
     font-family: Arial, sans-serif;
 }
@@ -72,47 +72,16 @@ main {
 }
 
 /* Header Styles */
-
-/* Header image styling */
-.header-image {
-    max-width: 100%;  /* Ensures the image doesn't overflow */
-    height: auto;     /* Maintains aspect ratio */
-    margin-bottom: 20px; /* Adds space between the image and the title */
-}
-
 header {
     background-image: url('head.png');
     background-size: cover;
     background-position: center;
     color: white; /* Set header text color to white */
-    padding: 60px 20px; /* Reduced padding to make the header shorter */
+    padding: 100px 20px; /* Adjust padding for overlap effect */
     text-align: center;
     position: relative;
     margin-top: 70px; /* Adjust for nav-bar height */
-    box-shadow: inset 0px 0px 20px rgba(251, 245, 245, 0.5);
-}
-
-header h1 {
-    font-size: 3.5rem;
-    font-weight: 600;
-    text-shadow: 3px 3px 10px rgba(244, 243, 243, 0.7);
-    letter-spacing: 2px;
-    z-index: 1; /* Ensures text stays above the dark overlay */
-}
-
-header p {
-    z-index: 1; /* Ensures text stays above the dark overlay */
-}
-
-/* Smaller screens */
-@media (max-width: 768px) {
-    header {
-        padding: 50px 15px; /* Reduced padding further for smaller screens */
-    }
-
-    header h1 {
-        font-size: 2.5rem; /* Adjust font size for mobile */
-    }
+    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
 header::after {
@@ -129,11 +98,14 @@ header::after {
 .header-content h1 {
     font-size: 3.5rem;
     font-weight: 600;
-    text-shadow: 3px 3px 10px rgba(244, 243, 243, 0.7);
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
     letter-spacing: 2px;
     z-index: 1; /* Ensures text stays above the dark overlay */
 }
 
+header h1, header p {
+    z-index: 1; /* Ensures text stays above the dark overlay */
+}
 
 /* Home Section Styles */
 #home {
@@ -251,7 +223,7 @@ footer {
 }
 
 .contact-item {
-    width: 100%;
+    width: 30%;
     background-color: #f2f2f2;  /* Light grey background */
     padding: 20px;
     border-radius: 8px;
@@ -483,4 +455,137 @@ footer {
     .service p {
         font-size: 0.95rem;
     }
+}
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+}
+
+.header-content h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.nav-bar a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-bar a:hover {
+    color: #18bc9c;
+}
+
+/* Main Section */
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.section-box {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    width: 400px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 1rem;
+    color: #555;
+}
+
+.input-group input {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.cta-button {
+    background-color: #18bc9c;
+    color: white;
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #1abc9c;
+}
+
+/* Message Box */
+.message {
+    text-align: center;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.social-links a:hover {
+    color: #18bc9c;
 }

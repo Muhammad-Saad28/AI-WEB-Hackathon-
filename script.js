@@ -91,3 +91,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setActiveNav();
 });
+
+// Function to add an item to the inventory
+function addItem() {
+    // Get input values
+    const itemName = document.getElementById('item-name').value;
+    const itemExpiry = document.getElementById('item-expiry').value;
+
+    // Validate inputs
+    if (!itemName || !itemExpiry) {
+        alert("Please fill in both fields.");
+        return;
+    }
+
+    // Create a new row for the inventory table
+    const table = document.getElementById('inventory-table').getElementsByTagName('tbody')[0];
+    const newRow = table.insertRow();
+
+    // Insert item name and expiration date cells
+    const itemCell = newRow.insertCell(0);
+    const expiryCell = newRow.insertCell(1);
+    const actionCell = newRow.insertCell(2);
+
+    // Set the text content for the item and expiry cells
+    itemCell.textContent = itemName;
+    expiryCell.textContent = itemExpiry;
+
+    // Create delete button
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.classList.add('delete-button');
+    deleteButton.onclick = function() {
+        newRow.remove();
+    };
+
+    // Append the delete button to the action cell
+    actionCell.appendChild(deleteButton);
+
+    // Clear the input fields after adding the item
+    document.getElementById('item-name').value = '';
+    document.getElementById('item-expiry').value = '';
+}
+
+// Optional: If you want to allow the user to press Enter to add an item
+document.getElementById('item-expiry').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        addItem();
+    }
+});
